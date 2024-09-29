@@ -1,0 +1,30 @@
+.add-user-form{
+    box-sizing: border-box;
+    width:220px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.add-user-box{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.error-msg{
+    color:red;
+}
+.add-user-buton{
+    box-sizing: border-box;
+    width:100px;
+    margin:auto;
+}
+.add-user-name,
+.add-user-number{
+    box-sizing: border-box;
+    width:100%
+}

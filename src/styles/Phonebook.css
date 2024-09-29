@@ -1,0 +1,16 @@
+
+.contacts-box{
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+}
+
+.contact-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 10px;
+    gap: 20px;
+}
