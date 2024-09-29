@@ -34,19 +34,3 @@ return      (<div>
 
       
 }
-    
-
-// export const AddUserForm =({submit})=>{
-//   return(
-//     <div>
-//       <form onSubmit={(event)=>{
-//         event.preventDefault()
-//         submit(event)
-//       }}>
-//         <input name="text"></input>
-//         <button>Submit</button>
-//       </form>
-//     </div>
-//   )
-//   }
-      

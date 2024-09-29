@@ -22,38 +22,29 @@ export const contactSlice = createSlice({
                     number: action.payload.number,
                 }
                 state.contacts.push(contact)
-                window.localStorage.setItem("contacts", JSON.stringify(state.contacts))
 
         },
         filtreatingContacts: (state, action)=>{
             state.value = action.payload
-            state.contacts.map(() =>{
-                state.filtredContacts.pop()
-            })
+            state.filtredContacts=[]
+            if(state.value!==""){
             state.contacts.map((item) =>{
                 if(item.name.toLowerCase().includes(action.payload.toLowerCase())){
                     state.filtredContacts.push(item)}
-            })
-            // state.filtredContacts = state.contacts.reduce(
-            //     (accumulator, contact) => {
-            //         if(contact.name.includes(action.payload)){
-            //             console.log(contact.name)
-            //             accumulator= contact
-            //         }
-            //     }
-            //     ,[]);
-              
-            
+            })}
+             
         },
         removeContact: (state, action) =>{
             console.log("action.payload", action.payload)
             state.contacts = state.contacts.filter((item) =>
-            item.id!==action.payload)
+                item.id!==action.payload)
             window.localStorage.setItem("contacts", JSON.stringify(state.contacts))
         }
     },
     
 })
+
 export const {addContact, filtreatingContacts, removeContact} = contactSlice.actions
+
 export default contactSlice.reducer
 

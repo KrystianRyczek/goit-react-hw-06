@@ -6,18 +6,17 @@ import { filtreatingContacts, removeContact } from "../redux/contacts/contactSli
 
 export const usePhoneBook=()=>{
     const filterValue = useSelector((state)=>state.value)
+    const allContacts = useSelector((state)=>state.contacts)
+    const searchingActive = filterValue.trim().length
+    const filtratedContacts = useSelector((state)=>state.filtredContacts)
+
     const dispach = useDispatch()
 
     const remove = (id)=>{
         dispach(removeContact(id))
         dispach(filtreatingContacts(filterValue))
     }
-
-    const filtrValue = useSelector((state)=>state.value)
-    const searchingActive = filtrValue.trim().length
-    const filtratedContacts = useSelector((state)=>state.filtredContacts)
-    const allContacts = useSelector((state)=>state.contacts)
-
+    
     const friends = (() => {
         if(searchingActive){
             return filtratedContacts
